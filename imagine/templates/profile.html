@@ -1,0 +1,68 @@
+
+{%extends 'base.html'%}
+{%block content%}
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-sm-2 col-md-2">
+            {%if profile.avatar%}
+            <img src=""
+            alt="" class="img-rounded img-responsive" width="150px" />
+            {%endif%}
+        </div>
+        <div class="col-sm-4 col-md-4">
+            <blockquote>
+                <b>{{profile}}</b> <br> <small><cite title="Source Title"> 
+                    
+
+                    <i class="glyphicon glyphicon-map-marker"></i></cite></small>
+            </blockquote>
+            <em></em> <br>
+            <i class="glyphicon glyphicon-globe"></i>
+            
+           
+                <br /> 
+            <p> <i class="glyphicon glyphicon-envelope"></i> 
+                
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th>Созданые картинки </th>
+                       
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><ul>
+                            {%if profile.gallery_set.all%}
+
+                            {%for create in profile.gallery_set.all %}
+                           <a href="{{create.get_absolute_url}}"> <li>{{create}}</li></a>
+                         
+                            {%endfor%}
+
+                            {%else%}
+                            <p>На данный момент ничего не созадно что-бы создать перейдите <a href="{%url 'add'%}" > сюда</a>
+                            </p>
+                            {%endif%}
+
+                        </ul></td>
+                        <td>
+                            
+                        <br>
+                    </td><br>
+                    <br>
+                </tr>
+               
+                </tbody>           
+                </table>
+                
+                <br/> 
+        </div>
+       
+
+    </div>
+</div>
+<br>
+
+{%endblock content%}

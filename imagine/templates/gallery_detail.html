@@ -1,0 +1,22 @@
+{%extends 'base.html'%}
+{%block content%}
+<div class="container"> 
+    
+    <div class="row">
+         <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+              <p><div class="alert alert-dark" role="alert">{{gallery.title}}</p> </div>
+             </div> <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6"> 
+            
+                </div> 
+            </div> 
+                  {%for img in gallery.images.all%}   
+            <img src="{{img.picture.url}}" class="img-fluid" alt="Responsive image">
+            {%endfor%}
+
+    
+        </div>  
+        <button type="button" class="btn btn-dark float-right" style="margin-top: 15px;"  ><a href="\">назад</a></button> 
+
+
+
+{%endblock content%}

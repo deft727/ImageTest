@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="container mt-5" style="max-width: 575.98px;">
+    <form action=""  method="POST" enctype="multipart/form-data" role="form">
+        {%csrf_token%}
+
+        {{form|crispy}}
+
+                  <button type="submit" class="btn btn-primary"> Обновить профиль</button>
+                
+    </form>
+</div>  
+{% endblock %}
